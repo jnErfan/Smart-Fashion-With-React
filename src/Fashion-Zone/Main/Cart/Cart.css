@@ -1,0 +1,9 @@
+.shoping-cart {
+  border-top: 5px solid blue;
+  border-bottom: 5px solid blue;
+  transition: 0.6s;
+}
+
+.shoping-cart:hover {
+  border: 3px solid #0dcaef;
+}

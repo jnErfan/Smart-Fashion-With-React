@@ -1,0 +1,8 @@
+.input-field {
+  border: 1px solid #0d6efd;
+  border-radius: 5px;
+  outline: none;
+}
+.input-field:hover {
+  box-shadow: 1px 1px 10px #0d6efd;
+}
