@@ -1,7 +1,17 @@
 import React from 'react';
 import "./Cart.css"
 
-const Cart = () => {
+const Cart = (props) => {
+  const {cart} = props
+
+  const priceTotal = (previous,current) => previous + current.price;
+  const price = cart.reduce( priceTotal , 0);
+  const delevaryCharge = 20;
+  const tax = price * 0.05;
+
+  const grandTotal = price + delevaryCharge + tax;
+
+
     return (
         <div>
           
@@ -19,31 +29,31 @@ const Cart = () => {
             <tbody>
               <tr>
                 <th>Total Added-Products:</th>
-                <td><i className="fas fa-cart-plus"> </i> <span id="total-Products"> 0</span></td>
+                <td><i className="fas fa-cart-plus"> </i> <span id="total-Products"> {cart.length}</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
                 <th>Price:</th>
-                <td><i className="fas fa-dollar-sign"></i> <span id="price">0</span></td>
+                <td><i className="fas fa-dollar-sign"></i> <span id="price">  {price.toFixed(2)}</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
                 <th>Delivery-Charge:</th>
-                <td><i className="fas fa-dollar-sign"></i> <span id="delivery-charge">20</span></td>
+                <td><i className="fas fa-dollar-sign"></i> <span id="delivery-charge"> {delevaryCharge}</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
                 <th>Total-Tax:</th>
-                <td><i className="fas fa-dollar-sign"></i> <span id="total-tax">0</span></td>
+                <td><i className="fas fa-dollar-sign"></i> <span id="total-tax">{tax.toFixed(2)}</span></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
                 <th scope="row">Total</th>
-                <td><i className="fas fa-dollar-sign"></i> <span id="total">0</span></td>
+                <td><i className="fas fa-dollar-sign"></i> <span id="total"> {grandTotal.toFixed(2)}</span></td>
                 <td></td>
               </tr>
             </tbody>
