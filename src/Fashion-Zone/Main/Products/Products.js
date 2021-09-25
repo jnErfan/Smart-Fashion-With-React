@@ -25,7 +25,7 @@ const Products = (props) => {
 
       <p className="mt-3"><span className="fw-bold">{rating.count}</span> Person Rated</p>
       <button onClick={() => props.AddToCart(props.product)} className="btn btn-info text-white">ADD TO CART</button>
-      <button className="btn btn-outline-info ms-2">DETAILS</button>
+      <button onClick={() => props.AddToDetails(props.product)} className="btn btn-outline-info ms-2">DETAILS</button>
 
     </div>
     </div>

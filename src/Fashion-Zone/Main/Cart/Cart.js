@@ -9,9 +9,21 @@ const Cart = (props) => {
   const delevaryCharge = 20;
   const tax = price * 0.05;
 
-  const grandTotal = price + delevaryCharge + tax;
+  let grandTotal = price + delevaryCharge + tax;
 
+const discount = () => {
+  const usePromo = prompt('Enter Promo Code')
 
+  if(usePromo === null){
+  alert('You Have Lost Discount');
+  }
+  else if (usePromo === 'erfanbro'){
+    alert('Promo Add Successful')
+  }
+  else{
+    alert('Enter Valid Promo Code')
+  }
+}
     return (
         <div>
           
@@ -59,7 +71,7 @@ const Cart = (props) => {
             </tbody>
           </table>
           <div className="parces text-center">
-            <button className="btn btn-primary text-center">Buy Now</button>
+            <button onClick={discount} className="btn btn-primary text-center">Buy Now</button>
           </div>
         </div>
 
